@@ -32,12 +32,12 @@
 
 ---
 
-## 🛠️ Methodology
+## Methodology
 
 ### 1. Data Simulation (The Digital Twin)
 Due to the proprietary nature of real-world telecom data, I engineered a **Physics-Based Digital Twin** to generate realistic 5G telemetry.
 * **Schema:** Modeled after standard Huawei/Ericsson energy consumption logs.
-* **Physics:** Implemented linear power models ($P_{load} = P_{static} + \beta \cdot Load$).
+* **Physics:** Implemented linear power models (P_{load} = P_{static} + \beta \cdot Load).
 * **Noise:** Injected stochastic noise and anomalies to stress-test the model.
 
 ### 2. Feature Engineering
