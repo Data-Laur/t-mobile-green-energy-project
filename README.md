@@ -23,7 +23,7 @@
 ### 1. The Result: Eliminating "Idle Waste"
 *The AI identifies the low-traffic window (1 AM - 5 AM) and safely lowers power, saving ~5 kWh per day per tower.*
 
-![Energy Savings Graph](/images/Viz 4: Project Impact.png)
+![Energy Savings Graph]([/images/Viz 4: Project Impact.png](https://github.com/user-attachments/assets/11461cb1-a3af-4e0b-80e3-57e75f5a692a))
 
 ### 2. The Logic: Why the Model Works
 *Feature importance analysis reveals that network traffic is highly habitual. The model relies heavily on "Yesterday's Traffic" (Lag24) to predict today's load.*
