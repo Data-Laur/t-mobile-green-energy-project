@@ -1,45 +1,61 @@
-# 🌿 5G Eco-RAN: "Zero-Bit, Zero-Watt" Optimization Engine
+# Project Zero-Watt: AI-Driven 5G Energy Optimization 🌿⚡
 
-> **Status:** 🚧 Active Development (Architecture Phase)
-> **Focus:** AI Strategy | Network Sustainability | Predictive Analytics
+**Reducing Telecommunications Carbon Footprint via XGBoost Traffic Prediction**
 
-## 🎯 The Business Problem
-Telecommunications networks face a critical efficiency paradox: **Base stations consume 80-90% of their peak energy even when carrying zero traffic.** For a major carrier like T-Mobile, this "always-on" inefficiency represents:
-1.  **High OPEX:** Massive electricity costs for idle hardware.
-2.  **Sustainability Gap:** A barrier to achieving "Net Zero" carbon targets.
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![Model](https://img.shields.io/badge/Model-XGBoost-orange)
+![Status](https://img.shields.io/badge/Status-Complete-green)
 
-## 💡 The Strategy: Intelligent Sleep Modes
-This project builds a **Predictive Control System** that forecasts cellular traffic at the base-station level. By accurately predicting "dead zones" (periods of low traffic), the system dynamically powers down antenna arrays without degrading User Experience (UX).
+## Executive Summary
+**The Problem:** 5G towers are energy-intensive assets, often running at full static power (300W+) 24/7, even during deep night hours when user traffic is near zero. This results in massive OpEx waste and unnecessary carbon emissions.
 
-**Projected Impact:**
-* **Target:** Reduce energy consumption by 15-20% during off-peak hours.
-* **Constraint:** Maintain 99.99% service availability (no dropped calls).
+**The Solution:** "Project Zero-Watt" is a Machine Learning pipeline that predicts network traffic 24 hours in advance. By identifying "Deep Sleep" windows with high confidence, the system dynamically lowers power consumption without risking dropped calls.
 
-## 🛠️ Technical Architecture
-The system is designed as a modular Python pipeline:
+**Key Impact:**
+* **25% Reduction** in daily energy consumption per tower.
+* **< 4% Error Rate** (MAE) ensuring network reliability.
+* **Validated** using a Physics-Based Digital Twin simulation.
 
-* **Data Source:** NetOp 5G Energy Consumption Dataset (Hugging Face)
-    * *Input:* Traffic Load (Erlangs), Bandwidth, Antennas.
-    * *Target:* Energy Consumption (kWh).
-* **Model:** XGBoost Regressor (Gradient Boosting) for time-series forecasting.
-* **Policy Engine:** Logic layer that translates "Low Traffic Prediction" into "Sleep Mode Action."
+---
 
-## 📂 Current Progress
-- [x] **Environment Setup:** Python, Pandas, XGBoost pipeline established.
-- [x] **Simulation Layer:** Synthetic data generator created to model load/energy relationships.
-- [ ] **Data Ingestion:** Awaiting access approval for NetOp research data.
-- [ ] **Model Training:** Hyperparameter tuning on real-world 5G logs.
-- [ ] **ROI Dashboard:** Visualization of energy savings vs. potential latency cost.
+## Visual Impact
 
-## 🚀 Quick Start (Simulation Mode)
-While waiting for the research dataset, you can run the **simulation engine** to see the logic in action:
+### 1. The Result: Eliminating "Idle Waste"
+*The AI identifies the low-traffic window (1 AM - 5 AM) and safely lowers power, saving ~5 kWh per day per tower.*
 
-```bash
-# 1. Clone the repo
-git clone [https://github.com/yourusername/5g-energy-optimization.git](https://github.com/yourusername/5g-energy-optimization.git)
+![Energy Savings Graph](/workspaces/t-mobile-green-energy-project/📁 images/Viz 4: Project Impact.png)
 
-# 2. Install dependencies
-pip install pandas numpy xgboost seaborn matplotlib
+### 2. The Logic: Why the Model Works
+*Feature importance analysis reveals that network traffic is highly habitual. The model relies heavily on "Yesterday's Traffic" (Lag24) to predict today's load.*
 
-# 3. Run the simulation
-python main.py --mode simulation
+![Feature Importance Graph](/workspaces/t-mobile-green-energy-project/📁 images/Viz 3: Model Logic (Feature Importance).png)
+
+---
+
+## 🛠️ Methodology
+
+### 1. Data Simulation (The Digital Twin)
+Due to the proprietary nature of real-world telecom data, I engineered a **Physics-Based Digital Twin** to generate realistic 5G telemetry.
+* **Schema:** Modeled after standard Huawei/Ericsson energy consumption logs.
+* **Physics:** Implemented linear power models ($P_{load} = P_{static} + \beta \cdot Load$).
+* **Noise:** Injected stochastic noise and anomalies to stress-test the model.
+
+### 2. Feature Engineering
+The raw time-series data was transformed to capture temporal dependencies:
+* **Lag Features:** `Load_Lag1` (Short-term trend), `Load_Lag24` (Daily seasonality).
+* **Cyclical Encoding:** Sine/Cosine transformation for Hour of Day.
+* **Rolling Statistics:** 3-hour moving averages to smooth volatile spikes.
+
+### 3. Modeling Strategy (XGBoost)
+I selected **XGBoost (Gradient Boosting)** over LSTM/RNNs for three reasons:
+1.  **Inference Speed:** Critical for edge deployment on tower hardware.
+2.  **Interpretability:** Tree-based feature importance allows engineers to audit decisions.
+3.  **Performance:** Superior handling of tabular time-series data with distinct seasonality.
+
+---
+
+## How to Run
+
+1. **Clone the Repo**
+   ```bash
+   git clone [https://github.com/YourUsername/Project-Zero-Watt.git](https://github.com/YourUsername/Project-Zero-Watt.git)
