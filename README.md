@@ -23,12 +23,12 @@
 ### 1. The Result: Eliminating "Idle Waste"
 *The AI identifies the low-traffic window (1 AM - 5 AM) and safely lowers power, saving ~5 kWh per day per tower.*
 
-![Energy Savings Graph](/workspaces/t-mobile-green-energy-project/📁 images/Viz 4: Project Impact.png)
+![Energy Savings Graph](/images/Viz 4: Project Impact.png)
 
 ### 2. The Logic: Why the Model Works
 *Feature importance analysis reveals that network traffic is highly habitual. The model relies heavily on "Yesterday's Traffic" (Lag24) to predict today's load.*
 
-![Feature Importance Graph](/workspaces/t-mobile-green-energy-project/📁 images/Viz 3: Model Logic (Feature Importance).png)
+![Feature Importance Graph](/images/Viz 3: Model Logic (Feature Importance).png)
 
 ---
 
