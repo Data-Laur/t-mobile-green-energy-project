@@ -28,7 +28,7 @@
 ### 2. The Logic: Why the Model Works
 *Feature importance analysis reveals that network traffic is highly habitual. The model relies heavily on "Yesterday's Traffic" (Lag24) to predict today's load.*
 
-![Feature Importance Graph](/images/Viz 3: Model Logic (Feature Importance).png)
+![Feature Importance Graph]([/images/Viz 3: Model Logic (Feature Importance).png](https://github.com/user-attachments/assets/0d4bbdd7-bed9-46d6-a457-58fea0899f95))
 
 ---
 
