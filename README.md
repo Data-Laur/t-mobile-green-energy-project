@@ -59,3 +59,10 @@ I selected **XGBoost (Gradient Boosting)** over LSTM/RNNs for three reasons:
 1. **Clone the Repo**
    ```bash
    git clone [https://github.com/YourUsername/Project-Zero-Watt.git](https://github.com/YourUsername/Project-Zero-Watt.git)
+
+## Future Work
+Weather Integration: Incorporate temperature data (HVAC cooling load significantly impacts tower energy).
+
+Anomaly Detection: Add an Isolation Forest layer to detect hardware failures before optimization.
+
+Federated Learning: Adapt the model to train locally on tower clusters to preserve data privacy.
