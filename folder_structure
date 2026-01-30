@@ -1,0 +1,20 @@
+T-Mobile-Zero-Watt-Project/
+│
+├── 📁 data/                   # ALL data goes here
+│   ├── raw/                   # Original CSVs (NetOp or Kaggle)
+│   └── processed/             # Cleaned parquet/csv files (Ready for ML)
+│
+├── 📁 notebooks/              # The Storytelling Layer
+│   ├── 00_PoC_Digital_Twin.ipynb       <-- YOUR CURRENT SIDE QUEST
+│   ├── 01_Data_Ingestion.ipynb         <-- Real Data Loading
+│   ├── 02_EDA_and_Visuals.ipynb        <-- Charts & Graphs
+│   ├── 03_Modeling_XGBoost.ipynb       <-- The ML Logic
+│   └── 04_Strategy_ROI_Dashboard.ipynb <-- The Business Case
+│
+├── 📁 src/                    # The Logic Layer (Python Scripts)
+│   ├── __init__.py
+│   ├── data_generator.py      <-- Put your "generate_5g..." function here
+│   └── optimizer.py           <-- Put your "NetworkOptimizer" class here
+│
+├── README.md                  # The Strategy Deck
+└── requirements.txt           # pip install list
